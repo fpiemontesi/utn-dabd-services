@@ -1,0 +1,21 @@
+<div class="container">
+    <form #formulario="ngForm" (ngSubmit)="guardar(formulario)">
+      <div class="mb-3">
+        <label for="inputNombre" class="form-label">Nombre</label>
+        <input #elementoNombre="ngModel" type="text" class="form-control" id="inputNombre" name="name" [(ngModel)]="auto.nombre" required maxlength="5" >
+        <div *ngIf="elementoNombre.touched && elementoNombre.dirty && elementoNombre.getError('required')">
+          El nombre es requerido
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="inputModelo" class="form-label">Modelo</label>
+        <input type="text" class="form-control" id="inputModelo" name="modelo" [(ngModel)]="auto.modelo" >
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  
+    <div *ngIf="formulario.invalid && formulario.touched">
+      El formulario contiene datos incorrectos
+    </div>
+  </div>
+  

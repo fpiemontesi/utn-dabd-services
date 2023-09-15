@@ -1,0 +1,9 @@
+<div *ngFor="let auto of listado">
+    <strong>{{ auto.nombre }}</strong>
+    <p>{{ auto.modelo }}</p>
+    <p>{{ auto.precio }}</p>
+
+    <div>
+        <button (click)="calcularImporte(auto.precio)">Calcular Importe</button>
+    </div>
+</div>
